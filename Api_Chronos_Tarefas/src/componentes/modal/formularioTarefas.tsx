@@ -35,8 +35,6 @@ export default function ModalCadastroTarefa({ isOpen, onFechar, onSucesso }: Pro
         if (onSucesso) onSucesso();
       })
       .catch((err) => {
-        console.error("Erro ao criar tarefa:", err.response?.data || err.message);
-        setErro("Erro ao criar tarefa!");
         alert("Erro ao criar tarefa! Verifique os dados e tente novamente.");
       });
   };

@@ -27,8 +27,7 @@ export default function ModalCadastroItem({ tarefaId, isOpen, onFechar, onSucess
         if (onSucesso) onSucesso(); 
       })
       .catch((err) => {
-        console.error("Erro ao criar item:", err.response?.data || err.message);
-        setErro("Erro ao criar item!");
+        alert("Erro ao criar item! Verifique o console para mais detalhes.");
       });
   };
 
