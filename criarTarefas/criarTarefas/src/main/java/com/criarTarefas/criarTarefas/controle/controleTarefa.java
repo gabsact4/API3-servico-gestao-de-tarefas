@@ -24,5 +24,6 @@ public class controleTarefa {
     public ResponseEntity<modeloTarefa> criarTarefa(@Valid @RequestBody tarefaDTO dto) {
         modeloTarefa tarefaCriada = servicoTarefa.criarTarefa(dto);
         return ResponseEntity.ok(tarefaCriada);
+        
     }
 }

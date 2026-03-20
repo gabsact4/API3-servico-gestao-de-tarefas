@@ -20,6 +20,7 @@ public class servicoTarefa {
         tarefa.setResponsavel(dto.getResponsavel());
         tarefa.setPrazo(dto.getPrazo());
         tarefa.setStatus(dto.getStatus());
+        
 
         return repositorioTarefa.save(tarefa);
     }
