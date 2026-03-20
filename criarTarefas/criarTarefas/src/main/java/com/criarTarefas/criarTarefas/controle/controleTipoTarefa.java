@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.criarTarefas.criarTarefas.modelo.DTO.tarefaTipoDTO;
-import com.criarTarefas.criarTarefas.modelo.modeloTipoTarefa;
+import com.criarTarefas.criarTarefas.modelo.TipoTarefa;
 import com.criarTarefas.criarTarefas.servico.servicoTipoTarefa;
 
 import jakarta.validation.Valid;
@@ -21,8 +21,8 @@ public class controleTipoTarefa {
     private servicoTipoTarefa servicoTipoTarefa;
 
     @PostMapping
-    public ResponseEntity<modeloTipoTarefa> criarTipoTarefa(@Valid @RequestBody tarefaTipoDTO dto) {
-        modeloTipoTarefa tipoTarefaCriada = servicoTipoTarefa.criarTipoTarefa(dto);
+    public ResponseEntity<TipoTarefa> criarTipoTarefa(@Valid @RequestBody tarefaTipoDTO dto) {
+        TipoTarefa tipoTarefaCriada = servicoTipoTarefa.criarTipoTarefa(dto);
         return ResponseEntity.ok(tipoTarefaCriada);
     }
 }
