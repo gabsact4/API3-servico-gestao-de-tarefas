@@ -10,7 +10,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class modeloItem {
+public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,7 @@ public class modeloItem {
     @ManyToOne
     @JoinColumn(name = "tarefa_id", nullable = false)
     @JsonIgnore
-    private modeloTarefa tarefa;
+    private Tarefa tarefa;
 
     public Long getId() {
         return id;
@@ -44,11 +44,11 @@ public class modeloItem {
         this.descricao = descricao;
     }
 
-    public modeloTarefa getTarefa() {
+    public Tarefa getTarefa() {
         return tarefa;
     }
 
-    public void setTarefa(modeloTarefa tarefa) {
+    public void setTarefa(Tarefa tarefa) {
         this.tarefa = tarefa;
     }
 }

@@ -11,14 +11,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class modeloTarefa {
+public class Tarefa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToMany(mappedBy = "tarefa", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<modeloItem> itens;
+    private List<Item> itens;
 
     @Column(nullable = false)
     private String titulo;
@@ -39,11 +39,11 @@ public class modeloTarefa {
         return id;
     }
 
-    public List<modeloItem> getItens() {
+    public List<Item> getItens() {
         return itens;
     }
 
-    public void setItens(List<modeloItem> itens) {
+    public void setItens(List<Item> itens) {
         this.itens = itens;
     }
 

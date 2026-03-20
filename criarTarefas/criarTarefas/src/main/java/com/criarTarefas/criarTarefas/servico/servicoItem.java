@@ -3,9 +3,9 @@ package com.criarTarefas.criarTarefas.servico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.criarTarefas.criarTarefas.modelo.modeloItem;
-import com.criarTarefas.criarTarefas.modelo.modeloTarefa;
 import com.criarTarefas.criarTarefas.modelo.DTO.itemDTO;
+import com.criarTarefas.criarTarefas.modelo.Item;
+import com.criarTarefas.criarTarefas.modelo.Tarefa;
 import com.criarTarefas.criarTarefas.repositorio.repositorioItem;
 import com.criarTarefas.criarTarefas.repositorio.repositorioTarefa;
 
@@ -18,11 +18,11 @@ public class servicoItem {
     @Autowired
     private repositorioTarefa repositorioTarefa;
 
-    public modeloItem criarItem(itemDTO dto) {
-        modeloTarefa tarefa = repositorioTarefa.findById(dto.getTarefaId())
+    public Item criarItem(itemDTO dto) {
+        Tarefa tarefa = repositorioTarefa.findById(dto.getTarefaId())
                 .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
 
-        modeloItem item = new modeloItem();
+        Item item = new Item();
         item.setNome(dto.getNome());
         item.setDescricao(dto.getDescricao());
         item.setTarefa(tarefa);

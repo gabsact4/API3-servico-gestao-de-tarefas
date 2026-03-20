@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.criarTarefas.criarTarefas.modelo.DTO.tarefaDTO;
-import com.criarTarefas.criarTarefas.modelo.modeloTarefa;
+import com.criarTarefas.criarTarefas.modelo.Tarefa;
 import com.criarTarefas.criarTarefas.servico.servicoTarefa;
 
 import jakarta.validation.Valid;
@@ -21,8 +21,8 @@ public class controleTarefa {
     private servicoTarefa servicoTarefa;
 
     @PostMapping
-    public ResponseEntity<modeloTarefa> criarTarefa(@Valid @RequestBody tarefaDTO dto) {
-        modeloTarefa tarefaCriada = servicoTarefa.criarTarefa(dto);
+    public ResponseEntity<Tarefa> criarTarefa(@Valid @RequestBody tarefaDTO dto) {
+        Tarefa tarefaCriada = servicoTarefa.criarTarefa(dto);
         return ResponseEntity.ok(tarefaCriada);
         
     }

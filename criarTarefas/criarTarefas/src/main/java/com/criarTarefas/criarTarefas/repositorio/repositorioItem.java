@@ -1,7 +1,8 @@
 package com.criarTarefas.criarTarefas.repositorio;
-import com.criarTarefas.criarTarefas.modelo.modeloItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface repositorioItem extends JpaRepository<modeloItem, Long> {
+import com.criarTarefas.criarTarefas.modelo.Item;
+
+public interface repositorioItem extends JpaRepository<Item, Long> {
     
 }
